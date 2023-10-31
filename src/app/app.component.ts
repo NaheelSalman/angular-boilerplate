@@ -12,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent implements OnInit
 {
+  isAppLoaded:boolean=true;
   constructor
   (
     private translateService : TranslateService,

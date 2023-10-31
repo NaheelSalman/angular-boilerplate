@@ -8,9 +8,10 @@ import { EnvName } from '@enums/environment.enum';
 // Packages
 import packageInfo from '../../package.json';
 
-const scheme = 'http://';
+const scheme = 'https://';
 const host   = 'localhost';
-const port   = ':5000';
+// const port   = ':7070';
+const port   = ':8080';
 const path   = '/api/';
 
 const baseUrl = scheme + host + port + path;
@@ -18,7 +19,7 @@ const baseUrl = scheme + host + port + path;
 export const environment = {
   production      : false,
   version         : packageInfo.version,
-  appName         : 'EasyAngular',
+  appName         : 'Jaktis',
   envName         : EnvName.LOCAL,
   defaultLanguage : 'en',
   apiBaseUrl      : baseUrl,

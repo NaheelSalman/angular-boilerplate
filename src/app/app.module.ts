@@ -29,6 +29,8 @@ import { AppComponent }         from './app.component';
 
 // Factories
 import { appInitFactory }       from '@factories/app-init.factory';
+import { SidebarComponent } from '@blocks/sidebar/sidebar.component';
+import { LayoutHeaderComponent } from '@layouts/layout-header/layout-header.component';
 
 @NgModule({
   imports: [
@@ -36,7 +38,6 @@ import { appInitFactory }       from '@factories/app-init.factory';
     HttpClientModule,
     BrowserAnimationsModule,
     BrowserModule,
-
     // External modules
     TranslateModule.forRoot({
       loader :
@@ -51,10 +52,10 @@ import { appInitFactory }       from '@factories/app-init.factory';
     // Internal modules
     SharedModule,
     StaticModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   providers: [
     // External modules

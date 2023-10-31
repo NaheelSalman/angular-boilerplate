@@ -28,77 +28,65 @@ import { PageLayoutComponent }       from './components/layouts/page-layout/page
 
 // Directives
 import { ModalWrapperDirective }     from './directives/modal-wrapper.directive';
+import { SidebarComponent } from '@blocks/sidebar/sidebar.component';
+import { NavbarComponent } from '@blocks/navbar/navbar.component';
 
 
 @NgModule({
-  imports         :
-  [
-    // Angular modules
-    CommonModule,
-    RouterModule,
-    FormsModule,
-    ReactiveFormsModule,
-
-    // External modules
-    TranslateModule,
-    AngularSvgIconModule,
-    NgbModule,
-  ],
-  declarations    :
-  [
-    // Components
-    ToastComponent,
-    ProgressBarComponent,
-
-    // Forms
-    FormConfirmComponent,
-
-    // Modals
-    ModalWrapperComponent,
-
-    // Layouts
-    LayoutHeaderComponent,
-    PageLayoutComponent,
-
-    // Pipes
-
-    // Directives
-    ModalWrapperDirective
-  ],
-  exports         :
-  [
-    // Angular modules
-    CommonModule,
-    RouterModule,
-    FormsModule,
-    ReactiveFormsModule,
-
-    // External modules
-    TranslateModule,
-    AngularSvgIconModule,
-    NgbModule,
-
-    // Components
-    ToastComponent,
-    ProgressBarComponent,
-
-    // Forms
-    FormConfirmComponent,
-
-    // Modals
-    ModalWrapperComponent,
-
-    // Layouts
-    LayoutHeaderComponent,
-    PageLayoutComponent,
-
-    // Pipes
-
-    // Directives
-    ModalWrapperDirective
-  ],
-  providers       :
-  [
-  ]
+    declarations: [
+        // Components
+        ToastComponent,
+        ProgressBarComponent,
+        // Forms
+        FormConfirmComponent,
+        // Modals
+        ModalWrapperComponent,
+        // Layouts
+        NavbarComponent,
+        SidebarComponent,
+        LayoutHeaderComponent,
+        PageLayoutComponent,
+        // Pipes
+        // Directives
+        ModalWrapperDirective
+    ],
+    exports: [
+        // Angular modules
+        CommonModule,
+        RouterModule,
+        FormsModule,
+        ReactiveFormsModule,
+        // External modules
+        TranslateModule,
+        AngularSvgIconModule,
+        NgbModule,
+        // Components
+        ToastComponent,
+        ProgressBarComponent,
+        // Forms
+        FormConfirmComponent,
+        // Modals
+        ModalWrapperComponent,
+        // Layouts
+        NavbarComponent,
+        SidebarComponent,
+        LayoutHeaderComponent,
+        PageLayoutComponent,
+        // Pipes
+        // Directives
+        ModalWrapperDirective
+    ],
+    providers: [],
+    imports: [
+        // Angular modules
+        CommonModule,
+        RouterModule,
+        FormsModule,
+        ReactiveFormsModule,
+        // External modules
+        TranslateModule,
+        AngularSvgIconModule,
+        NgbModule,
+    ]
 })
 export class SharedModule {}

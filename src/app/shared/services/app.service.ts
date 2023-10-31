@@ -25,6 +25,7 @@ import { Endpoint }                 from '@enums/endpoint.enum';
 
 // Services
 import { StoreService }             from './store.service';
+import { UserInfo } from '@models/user-info.model';
 
 @Injectable()
 export class AppService
@@ -35,7 +36,7 @@ export class AppService
     timeout : 990000,
     headers : {
       'Content-Type' : 'application/json',
-      'Accept'       : 'application/json',
+      'Accept'       : '*/*',
     },
   };
 
@@ -58,7 +59,6 @@ export class AppService
   {
     this.initRequestInterceptor(this.api);
     this.initResponseInterceptor(this.api);
-
     this.initAuthHeader();
   }
 
@@ -68,20 +68,26 @@ export class AppService
 
   public async authenticate(email : string, password : string) : Promise<boolean>
   {
-    return Promise.resolve(true);
+    // return Promise.resolve(true);
 
-    // StorageHelper.removeToken();
+    StorageHelper.removeToken();
 
-    // const url      = Endpoint.AUTHENTICATE;
-    // const { data } = await this.api.post(url, { email, password });
+    const url      = Endpoint.AUTHENTICATE;
+    const payload = {
+      username:email,
+      password:password,
+    };
+    JSON.stringify(payload);
+    const { data } = await this.api.post(url, JSON.stringify(payload));
 
-    // if (!data)
-    //   return false;
+    if (!data)
+      return false;
 
-    // const authResponse = new AuthResponse(data);
-    // StorageHelper.setToken(authResponse);
-    // this.initAuthHeader();
-    // return true;
+    var authResponse = new UserInfo();
+    authResponse= data;
+    StorageHelper.setToken(authResponse);
+    this.initAuthHeader();
+    return true;
   }
 
   public async forgotPassword(email : string) : Promise<boolean>
@@ -123,12 +129,12 @@ export class AppService
 
   private initAuthHeader() : void
   {
-    // const token = StorageHelper.getToken();
-    // if (!token)
-    //   return;
+    const token = StorageHelper.getToken();
+    if (!token)
+      return;
 
-    // this.api.defaults.headers.common['Authorization'] = `Bearer ${token.jwtToken}`;
-    // this.api.defaults.headers.common['Token']         = token.jwtToken;
+    this.api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    this.api.defaults.headers.common['Token']         = token;
   }
 
   public initRequestInterceptor(instance : AxiosInstance) : void
