@@ -8,17 +8,17 @@ import { HomeRoutingModule } from './home-routing.module';
 
 // Components
 import { HomeComponent }     from './home.component';
+import { ProgressCircleComponent } from "../../shared/components/blocks/progress-circle/progress-circle.component";
 
 @NgModule({
-  imports :
-  [
-    CommonModule,
-    HomeRoutingModule,
-    SharedModule,
-  ],
-  declarations :
-  [
-    HomeComponent,
-  ],
+    declarations: [
+        HomeComponent,
+    ],
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        SharedModule,
+        ProgressCircleComponent
+    ]
 })
 export class HomeModule { }
