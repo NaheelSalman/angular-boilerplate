@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid justify-content-between">
     <div class="d-flex">
-    <a class="navbar-brand" [routerLink]="['/dashboard']">
-      <img src="./assets/img/project/logo.svg" [alt]="appName + ' Logo'" class="img-fluid me-2"/>
-      <span>{{ appName }}</span>
-    </a>
-  </div>
+      <a class="navbar-brand" [routerLink]="['/dashboard']">
+        <img src="./assets/img/project/logo.svg" [alt]="appName + ' Logo'" class="img-fluid me-2" />
+        <span>{{ appName }}</span>
+      </a>
+    </div>
     <div class="d-flex">
       <input type="text" value="" class="form-control" placeholder="Search...">
       <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
@@ -13,11 +13,23 @@
         <div class="ripple-container"></div>
       </button>
       <ul class="navbar-nav mb-2 mb-lg-0 w-100">
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">{{ 'HOME' | translate }}</a>
+        <li class="nav-item dropdown" ngbDropdown>
+          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="notificationDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="material-icons">notifications</i>
+            <span class="notification">5</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" ngbDropdownMenu aria-labelledby="notificationDropdown">
+            <li><a class="dropdown-item cursor-pointer" (click)="onClickLogout()">{{ 'Mike John responded to your email' | translate }}</a></li>
+            <li><a class="dropdown-item cursor-pointer" (click)="onClickLogout()">{{ 'You have 5 new tasks' | translate }}</a></li>
+            <li><a class="dropdown-item cursor-pointer" (click)="onClickLogout()">{{ 'You are now friend with Andrew' | translate }}</a></li>
+            <li><a class="dropdown-item cursor-pointer" (click)="onClickLogout()">{{ 'Another Notification' | translate }}</a></li>
+            <li><a class="dropdown-item cursor-pointer" (click)="onClickLogout()">{{ 'Another One' | translate }}</a></li>
+          </ul>
         </li>
         <li class="nav-item dropdown" ngbDropdown>
-          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
             {{ 'USER' | translate }}
           </a>
           <ul class="dropdown-menu dropdown-menu-end" ngbDropdownMenu aria-labelledby="navbarDropdown">
