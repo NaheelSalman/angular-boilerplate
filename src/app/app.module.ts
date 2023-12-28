@@ -29,7 +29,7 @@ import { AppComponent }         from './app.component';
 
 // Factories
 import { appInitFactory }       from '@factories/app-init.factory';
-import { SidebarComponent } from '@blocks/sidebar/sidebar.component';
+import { SidebarComponent } from '@layouts/sidebar/sidebar.component';
 import { LayoutHeaderComponent } from '@layouts/layout-header/layout-header.component';
 
 @NgModule({

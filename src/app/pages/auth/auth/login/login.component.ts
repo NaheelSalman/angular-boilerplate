@@ -107,7 +107,7 @@ export class LoginComponent {
           StorageHelper.setToken(user);
           this.userInfoService.setCurrentSubject(user);
           this.storeService.setIsLoading(false);
-          this.toastManager.quickShow(result.message);
+          this.toastManager.quickShow(result.message,'success',true);
           this.router.navigate(['/home']);
           return true;
         } else {

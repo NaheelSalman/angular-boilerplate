@@ -28,8 +28,8 @@ import { PageLayoutComponent }       from './components/layouts/page-layout/page
 
 // Directives
 import { ModalWrapperDirective }     from './directives/modal-wrapper.directive';
-import { SidebarComponent } from '@blocks/sidebar/sidebar.component';
-import { NavbarComponent } from '@blocks/navbar/navbar.component';
+import { SidebarComponent } from '@layouts/sidebar/sidebar.component';
+import { NavbarComponent } from '@layouts/navbar/navbar.component';
 
 
 @NgModule({

@@ -30,7 +30,7 @@ export const ROUTES: RouteInfo[] = [
 export class LayoutHeaderComponent implements OnInit
 {
   public appName         : string  = environment.appName;
-  public isMenuCollapsed : boolean = true;
+  public isMenuCollapsed : boolean = false;
   menuItems: any[] = [];
 
   constructor

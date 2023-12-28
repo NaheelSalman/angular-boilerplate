@@ -6,6 +6,7 @@ import {
   PathLocationStrategy,
 } from '@angular/common';
 import { Router } from '@angular/router';
+import { environment } from '@env/environment';
 
 @Component({
   selector: 'app-navbar',
@@ -18,6 +19,7 @@ export class NavbarComponent implements OnInit {
   mobile_menu_visible: number = 0;
   private toggleButton: any;
   private sidebarVisible: boolean;
+  public appName         : string  = environment.appName;
 
   constructor(
     location: Location,
@@ -131,5 +133,10 @@ export class NavbarComponent implements OnInit {
       }
     }
     return 'Dashboard';
+  }
+  public async onClickLogout() : Promise<void>
+  {
+    // NOTE Redirect to login
+    this.router.navigate(['/auth/login']);
   }
 }
